@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Switch
+import androidx.appcompat.app.AppCompatDelegate
 
 class UserInfoFrag : Fragment() {
 
@@ -22,6 +24,7 @@ class UserInfoFrag : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var infoData : InformationData
+
 
         lateinit var name: EditText
         lateinit var nameString: String
@@ -55,9 +58,30 @@ class UserInfoFrag : Fragment() {
 
         lateinit var saveBtn: Button
         saveBtn = view.findViewById(R.id.form_personal_btn_save);
+        val btn = view.findViewById<Switch>(R.id.switch1)
+        val bundle = Bundle()
+        lateinit var darkMode : String
+        darkMode = "Enable Dark Mode"
+
+
+        btn.setOnCheckedChangeListener { _, isChecked ->
+            // if the button is checked, i.e., towards the right or enabled
+            // enable dark mode, change the text to disable dark mode
+            // else keep the switch text to enable dark mode
+            if (btn.isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                btn.text = "Disable dark mode"
+                darkMode = "Disable dark Mode"
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                btn.text = "Enable dark mode"
+                darkMode = "Enable dark Mode"
+            }
+        }
+
         saveBtn.setOnClickListener{
-            infoData = InformationData(nameString,emailString,contactString,addString,facebookString,linkedinString);
-            val bundle = Bundle()
+            infoData = InformationData(nameString,emailString,contactString,addString,facebookString,linkedinString,darkMode);
+
             bundle.putSerializable("data", infoData)
             val userDetailsFragment = UserDetailsFragment()
             userDetailsFragment.arguments = bundle

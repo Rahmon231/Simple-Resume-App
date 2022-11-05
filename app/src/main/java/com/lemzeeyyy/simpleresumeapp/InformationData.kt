@@ -10,6 +10,7 @@ class InformationData : Serializable {
     private lateinit var address: String
     private lateinit var facebook: String
     private lateinit var linkedin: String
+    private lateinit var darkMode: String
 
     constructor(
         name: String,
@@ -17,7 +18,8 @@ class InformationData : Serializable {
         contact: String,
         address: String,
         facebook: String,
-        linkedin: String
+        linkedin: String,
+        darkMode: String
     ) {
         this.name = name
         this.email = email
@@ -25,6 +27,7 @@ class InformationData : Serializable {
         this.address = address
         this.facebook = facebook
         this.linkedin = linkedin
+        this.darkMode = darkMode
     }
     fun getName(): String {
         return name;
@@ -43,6 +46,9 @@ class InformationData : Serializable {
     }
     fun getFacebook(): String {
         return facebook;
+    }
+    fun getDarkmode(): String {
+        return darkMode;
     }
 
 

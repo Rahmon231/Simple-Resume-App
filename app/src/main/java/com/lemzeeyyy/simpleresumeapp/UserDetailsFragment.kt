@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
 
 class UserDetailsFragment : Fragment() {
 
     lateinit var infoData : InformationData
+    lateinit var mode : String
 
 
     override fun onCreateView(
@@ -21,10 +23,10 @@ class UserDetailsFragment : Fragment() {
     ): View? {
 
          infoData = arguments?.getSerializable("data") as InformationData
-        Log.d("TAGY", "onCreateView: "+infoData.toString())
-        val arrayList = ArrayList<InformationData>()
-        arrayList.add(infoData)
-        Log.d("TAgGY", "onCreateView: "+arrayList.get(0).getName())
+
+        if (infoData.getDarkmode().equals("Dark Mode")) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user_details, container, false)
     }
