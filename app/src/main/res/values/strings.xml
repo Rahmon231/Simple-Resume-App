@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Resume App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_me">"I am Intelligent computer engineer, java programmer and android developer with extensive training and experience in android app development and database management. I am a Passionate professional looking to leverage technical skills, experience and knowledge as a software/android developer. "</string>
+    <string name="offer">I am experienced in using Java as well as kotlin for android application development. I have spent my free time learning Flutter over the last few months which I believe would be a useful tool to help the company develop cross platform mobile applications. With my skills, I can help the company build scalable,very efficient and effective mobile application.</string>
+</resources>
