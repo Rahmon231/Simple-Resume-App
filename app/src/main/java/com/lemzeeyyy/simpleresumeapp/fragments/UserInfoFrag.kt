@@ -1,4 +1,4 @@
-package com.lemzeeyyy.simpleresumeapp
+package com.lemzeeyyy.simpleresumeapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
 import androidx.appcompat.app.AppCompatDelegate
+import com.lemzeeyyy.simpleresumeapp.InformationData
+import com.lemzeeyyy.simpleresumeapp.R
 
 class UserInfoFrag : Fragment() {
 

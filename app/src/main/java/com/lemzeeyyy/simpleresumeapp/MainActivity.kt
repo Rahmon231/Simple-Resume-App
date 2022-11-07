@@ -2,9 +2,9 @@ package com.lemzeeyyy.simpleresumeapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import com.lemzeeyyy.simpleresumeapp.fragments.UserInfoFrag
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

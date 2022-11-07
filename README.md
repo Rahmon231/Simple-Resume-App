@@ -13,4 +13,4 @@ Solution to the challenge => I had to get solution with the help of stackoverflo
 
 apk link = https://drive.google.com/drive/folders/1bxNiqAQENaP5alfjljB5QpWpqk91GI_4?usp=share_link
 
-Appetize.io link = https://appetize.io/app/gaajirioxqgxilrzbkq753nhxi?device=pixel4&osVersion=11.0&scale=75
+Appetize.io link = https://appetize.io/app/mqmqofmv2sfrju2rgexge4is7e

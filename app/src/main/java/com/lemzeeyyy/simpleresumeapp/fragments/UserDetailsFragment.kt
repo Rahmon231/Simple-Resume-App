@@ -1,20 +1,20 @@
-package com.lemzeeyyy.simpleresumeapp
+package com.lemzeeyyy.simpleresumeapp.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
+import com.lemzeeyyy.simpleresumeapp.InformationData
+import com.lemzeeyyy.simpleresumeapp.R
 
 class UserDetailsFragment : Fragment() {
 
-    lateinit var infoData : InformationData
-    lateinit var mode : String
+    lateinit var infoData: InformationData
+    lateinit var mode: String
 
 
     override fun onCreateView(
@@ -22,7 +22,7 @@ class UserDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-         infoData = arguments?.getSerializable("data") as InformationData
+        infoData = arguments?.getSerializable("data") as InformationData
 
         if (infoData.getDarkmode().equals("Dark Mode")) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
@@ -42,7 +42,7 @@ class UserDetailsFragment : Fragment() {
         lateinit var address: TextView
         lateinit var addString: String
         address = view.findViewById(R.id.address_text);
-        addString =infoData.getAddress();
+        addString = infoData.getAddress();
         address.setText(addString)
 
         lateinit var contact: TextView
@@ -77,10 +77,29 @@ class UserDetailsFragment : Fragment() {
         offer = view.findViewById(R.id.offer_text)
         offer.setText(getString(R.string.offer))
 
-        lateinit var profilePic : ImageView
+        lateinit var profilePic: ImageView
         profilePic = view.findViewById(R.id.profile_picture)
         profilePic.setImageResource(R.drawable.mypic)
+        val bundle = Bundle();
+        val webViewFragment = WebViewFragment()
+        facebook.setOnClickListener {
+            bundle.putString("weblink", facebookString)
+            webViewFragment.arguments = bundle
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.fragment_container_view, webViewFragment)
+                addToBackStack("back")
+                commit()
+            }
 
+        }
+        linkedin.setOnClickListener {
+            bundle.putString("weblink",linkedinString)
+            webViewFragment.arguments = bundle
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.fragment_container_view, webViewFragment)
+                addToBackStack("back")
+                commit()
+            }
+        }
     }
-
 }
